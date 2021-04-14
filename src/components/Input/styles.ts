@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface containerProps {
+  isFocused: boolean
+  isFilled: boolean
+}
+
+export const Container = styled.div<containerProps>`
   display: flex;
   align-items: center;
 
@@ -20,7 +25,7 @@ export const Container = styled.div`
     font-size: 36px;
     line-height: 36px;
   }
-
+  
   ${props =>
     props.isFocused &&
     css`
@@ -33,6 +38,7 @@ export const Container = styled.div`
     css`
       color: #ff9000;
     `}
+
 
   input {
     flex: 1;
